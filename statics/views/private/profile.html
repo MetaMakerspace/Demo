@@ -1,0 +1,45 @@
+<!-- Copyright (C) 2017 MetaMakerSpace -->
+
+<!-- -->
+<div class="esobody">
+
+    <!-- -->
+    <div class="controls">
+        <!-- -->
+        <h3>avatar<span><b>{{avatarStatus}}</b></span></h3>
+        <form ng-submit="avatarUpdate()">
+            <input type="text" placeholder="no avatar" ng-model="avatar" disabled />
+            <input type="text" placeholder="new avatar url" ng-model="avatarNew" />
+            <input type="submit" value="update avatar url" />
+        </form><br />
+        <!-- -->
+        <h3>biography<span><b>{{biographyStatus}}</b></span></h3>
+        <form ng-submit="biographyUpdate()">
+            <textarea placeholder="biography" ng-model="biography"></textarea>
+            <input type="submit" value="update biography" />
+        </form><br />
+        <!-- -->
+        <h3>username<span><b>{{usernameStatus}}</b></span></h3>
+        <form ng-submit="">
+            <input type="text" placeholder="username" ng-model="username" disabled />
+            <input type="text" disabled />
+        </form><br />
+        <!-- -->
+        <h3>email<span><b>{{emailStatus}}</b></span></h3>
+        <form ng-submit="emailUpdate()">
+            <input type="text" placeholder="old email" ng-model="emailOld" disabled />
+            <input type="text" placeholder="new email" ng-model="emailNew" />
+            <input type="password" placeholder="password" ng-model="emailPassword" />
+            <input type="submit" value="update email" />
+        </form><br />
+        <!-- -->
+        <h3>password<span><b>{{passwordStatus}}</b></span></h3>
+        <form ng-submit="passwordUpdate()">
+            <input type="password" placeholder="new password" ng-model="passwordNew1" />
+            <input type="password" placeholder="new password" ng-model="passwordNew2" />
+            <input type="password" placeholder="old password" ng-model="passwordOld" />
+            <input type="submit" value="update password" />
+        </form><br />
+    </div>
+
+</div>

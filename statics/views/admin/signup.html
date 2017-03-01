@@ -1,0 +1,28 @@
+<!-- Copyright (C) 2017 MetaMakerSpace -->
+
+<!-- -->
+<div class="esobody">
+
+    <!-- -->
+    <div class="controls">
+        <!-- -->
+        <h3>hello {{xAccessUser.username}}</h3>
+        <ul><li><div>
+            As the first user, you are automatically made the
+            administrator of this system. Enjoy!
+        </div></li></ul><br />
+        <!-- -->
+        <h3>example demo<span><b>{{exampleStatus}}</b></span></h3>
+        <form ng-submit="loadExampleDemo()">
+            <div>A demo preloaded with example data.</div>
+            <input type="submit" value="load example demo" />
+        </form><br />
+        <!-- -->
+        <h3>blank demo<span><b>{{blankStatus}}</b></span></h3>
+        <form ng-submit="loadBlankDemo()">
+            <div>A clean, blank demo.</div>
+            <input type="submit" value="load blank demo" />
+        </form><br />
+    </div>
+
+</div>

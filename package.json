@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "name": "MetaMakerSpace",
+  "version": "0.1.1",
+  "license": "UNLICENSED",
+  "description": "Making Makers",
+  "homepage": "http://demo.metamakerspace.com",
+  "contributors": [
+    "Ben Vacha <ben@benvacha.com>"
+  ],
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMakerspace/Demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MetaMakerspace/Demo/issues"
+  },
+  "engines": {
+    "node": "6.4.0",
+    "npm": "3.10.6"
+  },
+  "dependencies": {
+    "body-parser": "1.16.0",
+    "express": "4.14.1",
+    "jsonwebtoken": "7.2.1"
+  }
+}

@@ -1,0 +1,43 @@
+<!-- Copyright (C) 2017 MetaMakerSpace -->
+
+<!-- -->
+<div class="prebody dropped">
+    <div class="left">
+        <a class="logotype" ui-sref="private"></a>
+    </div>
+    <div class="right">
+    <a ui-sref="public">about</a> &bull;
+    <a ui-sref="public.signin">signIn</a> &bull;
+    <a ui-sref="public.signup">signUp</a>
+    </div>
+</div>
+
+<!-- -->
+<div ui-view class="subbody faded">
+
+    <div class="esobody">
+        <div class="controls nested">
+            <!-- -->
+            <div class="controls">
+                <h3>check in<span><b>{{checkInStatus}}</b></span></h3>
+                <form ng-submit="checkIn(usermailIn); usermailIn='';">
+                    <input type="text" placeholder="username || email"
+                        ng-model="usermailIn" />
+                    <input type="submit" value="check in" />
+                </form><br />
+                <h3>check out<span><b>{{checkOutStatus}}</b></span></h3>
+                <form ng-submit="checkOut(usermailOut); usermailOut='';">
+                    <input type="text" placeholder="username || email"
+                        ng-model="usermailOut" />
+                    <input type="submit" value="check out" />
+                </form>
+            </div>
+            <!-- -->
+            <center>
+                <br /><br /><br />
+                <img src="/images/logo.png" style="max-width:90%" />
+            </center>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+<!-- Copyright (C) 2017 MetaMakerSpace -->
+
+<!-- -->
+<div class="esobody">
+
+    <!-- -->
+    <div class="controls">
+        <h3 ng-show="signedOut">signed out</h3>
+        <p ng-show="signedOut">You have successfully signed out.<br /><br /></p>
+        <h3 ng-hide="signedOut">demo faq</h3>
+        <ol ng-hide="signedOut">
+            <li>all data is stored in the browser.<br />
+                no data is stored remotely.</li>
+            <li>data is not shared between browsers or devices.</li>
+            <li>clearing browser caches may permanently delete all data.</li>
+            <li>availability may end at any time.</li>
+        </ol>
+        <h3>
+            sign in
+            <span ng-hide="signInStatus">
+                <a ui-sref="public.recover">recover</a>
+            </span>
+            <span ng-show="signInStatus">
+                <b>{{signInStatus}}</b> &bull;
+                <a ui-sref="public.recover">recover</a>
+            </span>
+        </h3>
+        <form ng-submit="signIn(usermail,password)">
+            <input type="text" placeholder="username || email" ng-model="usermail" />
+            <input type="password" placeholder="password" ng-model="password" />
+            <input type="submit" value="sign in" />
+        </form>
+        <h6><center>
+            by signing in, you agree to the<br />
+            <a ui-sref="public.terms">terms of service</a> and
+            <a ui-sref="public.privacy">privacy policy</a>.
+        </center></h6>
+    </div>
+
+</div>

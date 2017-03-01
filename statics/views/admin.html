@@ -1,0 +1,82 @@
+<!-- Copyright (C) 2017 MetaMakerSpace -->
+
+<!-- -->
+<div class="prebody dropped">
+    <div class="left">
+        <a class="logotype" ui-sref="private"></a>
+    </div>
+    <div class="right">
+        <a ui-sref="private">dashboard</a> &bull;
+        <a ui-sref="admin">system</a> &bull;
+        <a ui-sref="admin.logs">logs</a> &bull;
+        <a ui-sref="public.signout">signOut</a>
+    </div>
+</div>
+
+<!-- -->
+<div ui-view class="subbody faded">
+    <div class="esobody">
+
+        <!-- -->
+        <div class="controls nested">
+
+            <!-- -->
+            <div class="controls">
+                <!-- -->
+                <h3>add attributes<span><b>{{attrsStatus}}</b></span></h3>
+                <form ng-submit="addAttribute()">
+                    <input type="text" placeholder="title" ng-model="attr.title" />
+                    <input type="text" placeholder="abbreviation" ng-model="attr.abbreviation" />
+                    <input type="submit" value="add attribute" />
+                </form>
+                <!-- -->
+                <h3>add skills<span><b>{{skillsStatus}}</b></span></h3>
+                <form ng-submit="addSkill()">
+                    <input type="text" placeholder="title" ng-model="skill.title" />
+                    <input type="submit" value="add skill" />
+                </form>
+                <!-- -->
+                <h3>restore demo<span><b>{{restoreStatus}}</b></span></h3>
+                <form ng-submit="">
+                    <input type="submit" value="restore blank demo"
+                        ng-click="restoreBlankDemo()" />
+                    <input type="submit" value="restore example demo"
+                        ng-click="restoreExampleDemo()" />
+                </form>
+            </div>
+
+            <!-- -->
+            <h3>attributes<span><b>{{attrsStatus}}</b></span></h3>
+            <ul>
+                <li ng-repeat="attr in attrs"><div>
+                    {{attr.title}}
+                    <span>
+                        {{attr.abbreviation}} &bull;
+                        <a ng-click="deleteAttribute(attr.id)">delete</a>
+                    </span>
+                </div></li>
+                <li ng-hide="attrs.length">
+                    {{attrsStatus || 'no attributes'}}
+                    <span>{{attrsStatus || 'no attributes'}}</span>
+                </li>
+            </ul>
+
+            <!-- -->
+            <h3>skills<span><b>{{skillsStatus}}</b></span></h3>
+            <ul>
+                <li ng-repeat="skill in skills"><div>
+                    {{skill.title}}
+                    <span>
+                        <a ng-click="deleteSkill(skill.id)">delete</a>
+                    </span>
+                </div></li>
+                <li ng-hide="skills.length">
+                    {{skillsStatus || 'no skills'}}
+                    <span>{{skillsStatus || 'no skills'}}</span>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>

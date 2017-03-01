@@ -1,0 +1,67 @@
+<!-- Copyright (C) 2017 MetaMakerSpace -->
+
+<!-- -->
+<div class="prebody dropped">
+    <div class="left">
+        <a class="logotype" ui-sref="private"
+            ui-sref-opts="{reload:true}"></a>
+    </div>
+    <div class="right">
+        <a ui-sref="private.profile">
+            {{xAccessUser.username || 'profile'}}</a> &bull;
+        <span ng-show="xAccessUser.isAdmin">
+            <a ui-sref="admin">system</a> &bull;
+        </span>
+        <a ui-sref="public.signout">signOut</a>
+    </div>
+</div>
+
+<!-- -->
+<div ui-view class="subbody faded">
+
+    <div class="esobody">
+
+        <!-- -->
+        <div class="controls nested">
+            <!-- -->
+            <div class="controls">
+                <h3>users<span><b>{{usersStatus}}</b></span></h3>
+                <ul ng-hide="users.length">
+                    <li><div>{{usersStatus || 'No Users'}}</div></li>
+                </ul>
+                <ul>
+                    <li ng-repeat="user in users">
+                        <a href="/users/{{user.id}}">
+                            <b>{{user.username}}</b>
+                            <span>{{user.email}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- -->
+            <h3>events<span><b>{{eventsStatus}}</b></span></h3>
+            <ul ng-hide="events.length">
+                <li><div>{{eventsStatus || 'No Events'}}</div></li>
+            </ul>
+            <ul><li ng-repeat="event in events"><div>
+                <b>{{event.comment}}</b>
+                <span ng-show="event.attributes || event.skills">
+                    {{event.attributes}}
+                    {{event.attributes && event.skills ? ' | ' : ''}}
+                    {{event.skills}}
+                </span>
+                <span>
+                    <i class="material-icons"
+                        ng-repeat="star in getStars(event.reputation) track by $index">
+                        {{star}}
+                    </i> &bull;
+                    {{event.updated | date:'medium'}} &bull;
+                    <a href="/users/{{event.byUser.id}}">{{event.byUser.username}}</a> &gt;
+                    <a href="/users/{{event.toUser.id}}">{{event.toUser.username}}</a>
+                </span>
+            </div></li></ul>
+        </div>
+
+    </div>
+
+</div>

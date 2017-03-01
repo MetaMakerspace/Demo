@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <!-- base uri -->
+    <base href="/" />
+    <!-- title -->
+    <title>MetaMakerSpace</title>
+    <!-- meta data -->
+    <meta charset="utf-8" />
+    <meta name="description" content="MetaMakerSapce" />
+    <meta name="keywords" content="metamakerspace,makerspace,maker" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="MMSpace" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <!-- icons -->
+	<link type="image/png" rel="icon" href="/images/favicon.png" />
+	<link type="image/png" rel="apple-touch-icon-precomposed" href="/images/appicon.png" />
+    <!-- styles -->
+    <link type="text/css" rel="stylesheet" href="/styles/animate.css" />
+    <link type="text/css" rel="stylesheet" href="/index.css" />
+</head>
+<body ng-animate-children="true">
+    <!-- app -->
+    <div ui-view class="subbody faded"></div>
+    <noscript><center>Enable Javascript</center></noscript>
+    <!-- scripts -->
+    <script type="text/javascript" src="/scripts/marked.min.js"></script>
+    <script type="text/javascript" src="/scripts/angular.min.js"></script>
+    <script type="text/javascript" src="/scripts/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="/scripts/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="/scripts/angular-marked.min.js"></script>
+    <script type="text/javascript" src="/scripts/angular-animate.min.js"></script>
+    <!-- models -->
+    <script type="text/javascript" src="/models/attributes.js"></script>
+    <script type="text/javascript" src="/models/events.js"></script>
+    <script type="text/javascript" src="/models/locals.js"></script>
+    <script type="text/javascript" src="/models/metas.js"></script>
+    <script type="text/javascript" src="/models/skills.js"></script>
+    <script type="text/javascript" src="/models/users.js"></script>
+    <!-- services -->
+    <script type="text/javascript" src="/services/attributes.js"></script>
+    <script type="text/javascript" src="/services/events.js"></script>
+    <script type="text/javascript" src="/services/metas.js"></script>
+    <script type="text/javascript" src="/services/skills.js"></script>
+    <script type="text/javascript" src="/services/users.js"></script>
+    <script type="text/javascript" src="/services/tokens.js"></script>
+    <!-- routers -->
+    <script type="text/javascript" src="/routers/public.js"></script>
+    <script type="text/javascript" src="/routers/private.js"></script>
+    <script type="text/javascript" src="/routers/private/profile.js"></script>
+    <script type="text/javascript" src="/routers/private/users.js"></script>
+    <script type="text/javascript" src="/routers/admin.js"></script>
+    <script type="text/javascript" src="/routers/admin/logs.js"></script>
+    <script type="text/javascript" src="/routers/admin/signup.js"></script>
+    <!-- launch -->
+    <script type="text/javascript" src="/index.js"></script>
+</body>
+</html>

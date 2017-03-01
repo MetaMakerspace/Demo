@@ -1,0 +1,29 @@
+<!-- Copyright (C) 2017 MetaMakerSpace -->
+
+<!-- -->
+<div class="esobody">
+
+    <div class="controls">
+        <h3>demo faq</h3>
+        <ol>
+            <li>all data is stored in the browser.<br />
+                no data is stored remotely.</li>
+            <li>data is not shared between browsers or devices.</li>
+            <li>clearing browser caches may permanently delete all data.</li>
+            <li>availability may end at any time.</li>
+        </ol>
+        <h3>sign up<span><b>{{signUpStatus}}</b></span></h3>
+        <form ng-submit="signUp(username,email,password)">
+            <input type="text" placeholder="email" ng-model="email" />
+            <input type="text" placeholder="username" ng-model="username" />
+            <input type="password" placeholder="password" ng-model="password" />
+            <input type="submit" value="sign up" />
+        </form>
+        <h6><center>
+            by signing up, you agree to the<br />
+            <a ui-sref="public.terms">terms of service</a> and
+            <a ui-sref="public.privacy">privacy policy</a>.
+        </center></h6>
+    </div>
+
+</div>

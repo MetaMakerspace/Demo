@@ -1,0 +1,20 @@
+<!-- Copyright (C) 2017 MetaMakerSpace -->
+
+<!-- -->
+<div class="esobody">
+
+    <!-- -->
+    <div class="controls wide">
+        <!-- -->
+        <h3>activities log<span><b>{{activitesStatus || activities.length}}</b></span></h3>
+        <ul><li ng-repeat="activity in activities"><div>
+            <span>
+                {{activity.created | date:'medium'}} &bull;
+                <a href="/users/{{activity.byUser.id}}/">
+                    {{activity.byUser.username}}</a> &bull;
+                {{activity.comment}}
+            </span>
+        </div></li></ul>
+    </div>
+
+</div>

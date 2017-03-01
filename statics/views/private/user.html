@@ -1,0 +1,116 @@
+<!-- Copyright (C) 2017 MetaMakerSpace -->
+
+<!-- -->
+<div class="esobody">
+
+    <!-- -->
+    <div class="banner dropped">
+        <div class="avatar" ng-hide="user.avatar"></div>
+        <div class="avatar" ng-show="user.avatar"
+            style="background-image:url('{{user.avatar}}')"></div>
+        <!-- -->
+        <div class="subbanner attr">
+            <div ng-hide="user.attributes.length">
+                {{userStatus || 'no attributes'}}
+            </div>
+            <ul><li ng-repeat="attr in user.attributes"
+                ng-class="{fifth:user.attributes.length==5,
+                sixth:user.attributes.length==6}">
+                <div style="width:{{100-attr.levelPercent}}%"></div>
+                {{attr.level > 9 ? attr.level : '0' + attr.level}} /
+                <b>{{attr.title}}</b>
+                <span>{{attr.levelProgress}} / {{attr.levelGoal}}</span>
+            </li></ul>
+        </div>
+        <!-- -->
+        <div class="subbanner bio"><div>
+            <b>{{user.username}}</b> /
+            <span class="material-icons"
+                ng-repeat="star in getStars(user.reputation) track by $index">
+                {{star}}
+            </span>
+            <span>
+                / {{user.reputationCount || '00'}}
+                {{user.reputationCount == 1 ? 'Event' : 'Events'}}
+            </span>
+            <span marked="user.biography"></span>
+        </div></div>
+    </div>
+
+    <!-- -->
+    <div class="controls nested">
+
+        <!-- -->
+        <div class="controls">
+            <h3>add event<span>
+                {{userStatus || eventStatus}}
+            </span></h3>
+            <form ng-submit="addEvent()">
+                <textarea class="short" placeholder="comment"
+                    ng-model="event.comment"></textarea>
+                <input type="text" placeholder="reputation out of 5"
+                    ng-model="event.reputation" />
+                <input type="text" placeholder="attribute:value, attribute:value"
+                    ng-model="event.attributes" />
+                <input type="text" placeholder="skill:value, skill:value"
+                    ng-model="event.skills" />
+                <input type="submit" value="add event" />
+            </form>
+        </div>
+
+        <!-- -->
+        <h3>skills<span>{{userStatus || user.skills.length}}</span></h3>
+        <ul ng-hide="user.skills.length"><li>
+            {{userStatus || 'No Skills'}}
+        </ul>
+        <ul><li ng-repeat="skill in user.skills">
+            <b>{{skill.title}}</b>
+            <span>
+                level {{skill.level}} &bull;
+                {{skill.levelProgress}} / {{skill.levelGoal}}
+                // {{skill.levelPercent}}%
+            </span>
+        </li></ul>
+
+        <!-- -->
+        <h3>events<span>
+            {{userStatus || eventStatus || user.events.length}}
+        </span></h3>
+        <ul ng-hide="user.events.length"><li>
+            {{userStatus || eventStatus || 'No Events'}}
+        </ul>
+        <ul><li ng-repeat="event in user.events">
+            <b>{{event.comment}}</b>
+            <span ng-show="event.attributes || event.skills">
+                {{event.attributes}}
+                {{event.attributes && event.skills ? ' | ' : ''}}
+                {{event.skills}}
+            </span>
+            <span>
+                <i class="material-icons"
+                    ng-repeat="star in getStars(event.reputation) track by $index">
+                    {{star}}
+                </i> &bull;
+                {{event.created | date:'medium'}} &bull;
+                <a href="/users/{{event.createdBy.id}}/">
+                    {{event.createdBy.username}}
+                </a>
+            </span>
+        </li></ul>
+
+        <!-- -->
+        <h3>activities<span>{{userStatus || user.activities.length}}</span></h3>
+        <ul ng-hide="user.activities.length"><li>
+            {{userStatus || 'No Activities'}}
+        </ul>
+        <ul><li ng-repeat="activity in user.activities">
+            <span>
+                {{activity.created | date:'medium'}} &bull;
+                {{activity.comment}}
+            </span>
+        </li></ul>
+        <br /><br />
+
+    </div>
+
+</div>
